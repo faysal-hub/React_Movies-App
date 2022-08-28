@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import tmdbApi, { category, movieType } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 
+import HeroSlideItem from '../hero-slideItem/HeroSlideItem';
+
 import './hero-slide.scss';
 
 const HeroSlide = () => {
@@ -34,6 +36,7 @@ const HeroSlide = () => {
       <Swiper
         modules={[Autoplay, Pagination]}
         pagination={{ clickable: true }}
+        loop={true}
         grabCursor={true}
         spaceBetween={0}
         slidesPerView={1}
@@ -42,9 +45,9 @@ const HeroSlide = () => {
         {movieItems.map((item, i) => (
           <SwiperSlide key={i}>
             {({ isActive }) => (
-              <img
-                src={apiConfig.originalImage(item.backdrop_path)}
-                alt={item.title}
+              <HeroSlideItem
+                item={item}
+                className={`${isActive ? 'active' : ''}`}
               />
             )}
           </SwiperSlide>
