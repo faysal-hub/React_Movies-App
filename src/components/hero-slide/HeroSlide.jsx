@@ -9,6 +9,7 @@ import apiConfig from '../../api/apiConfig';
 import HeroSlideItem from '../hero-slideItem/HeroSlideItem';
 
 import './hero-slide.scss';
+import TrailerModal from '../trailer-modal/TrailerModal';
 
 const HeroSlide = () => {
   SwiperCore.use([Autoplay, Pagination]);
@@ -53,6 +54,9 @@ const HeroSlide = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      {movieItems.map((item, i) => (
+        <TrailerModal key={i} item={item} />
+      ))}
     </div>
   );
 };

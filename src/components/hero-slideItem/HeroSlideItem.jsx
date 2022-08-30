@@ -4,6 +4,7 @@ import apiConfig from '../../api/apiConfig';
 import { useHistory } from 'react-router';
 
 import './hero-slideItem.scss';
+import tmdbApi, { category } from '../../api/tmdbApi';
 
 const HeroSlideItem = (props) => {
   let hisrory = useHistory();
@@ -12,6 +13,23 @@ const HeroSlideItem = (props) => {
   const background = apiConfig.originalImage(
     item.backdrop_path ? item.backdrop_path : item.poster_path
   );
+
+  const setModalActive = async () => {
+    const modal = document.querySelector(`#modal_${item.id}`);
+
+    const videos = await tmdbApi.getVideos(category.movie, item.id);
+
+    if (videos.results.length > 0) {
+      const videSrc = 'https://www.youtube.com/embed/' + videos.results[0].key;
+      modal
+        .querySelector('.modal__content > iframe')
+        .setAttribute('src', videSrc);
+    } else {
+      modal.querySelector('.modal__content').innerHTML = 'No trailer';
+    }
+
+    modal.classList.toggle('active');
+  };
 
   return (
     <div
@@ -26,7 +44,7 @@ const HeroSlideItem = (props) => {
             <Button onClick={() => hisrory.push('/movie/' + item.id)}>
               Watch now
             </Button>
-            <OutlineButton onClick={() => console.log('trailer')}>
+            <OutlineButton onClick={setModalActive}>
               Watch trailer
             </OutlineButton>
           </div>
