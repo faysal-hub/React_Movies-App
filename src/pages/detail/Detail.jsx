@@ -32,6 +32,19 @@ const Detail = () => {
               )})`,
             }}
           ></div>
+          <div className="mb-3 movie-content container">
+            <div className="movie-content__poster">
+              <div
+                className="movie-content__poster__img"
+                style={{
+                  backgroundImage: `url(${apiConfig.originalImage(
+                    item.poster_path || item.backdrop_path
+                  )})`,
+                }}
+              ></div>
+            </div>
+            <div className="movie-content__info"></div>
+          </div>
         </>
       )}
     </>

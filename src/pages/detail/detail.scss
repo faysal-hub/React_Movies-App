@@ -27,3 +27,29 @@
     background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
   }
 }
+
+.movie-content {
+  @include flex(flex-start, flex-start);
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -200px;
+  position: relative;
+  padding: 0 2rem;
+
+  &__poster {
+    flex: 1;
+
+    @include mobile {
+      display: none;
+    }
+
+    &__img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: $border-radius;
+      padding-top: 165%;
+    }
+  }
+}
