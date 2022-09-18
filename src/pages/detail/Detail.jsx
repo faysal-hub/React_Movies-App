@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 
 import tmdbApi from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
@@ -7,6 +7,8 @@ import apiConfig from '../../api/apiConfig';
 import './detail.scss';
 import CastList from './CastList';
 import VideoList from './VideoList';
+
+import MovieList from '../../components/movie-list/MovieList';
 
 const Detail = () => {
   const { category, id } = useParams();
@@ -67,6 +69,12 @@ const Detail = () => {
           <div className="container">
             <div className="section mb-3">
               <VideoList id={item.id} />
+            </div>
+            <div className="section mb-3">
+              <div className="section__header mb-2">
+                <h2>Similar</h2>
+              </div>
+              <MovieList category={category} type="similar" id={item.id} />
             </div>
           </div>
         </>
