@@ -1,13 +1,13 @@
 import React from 'react';
 import Button, { OutlineButton } from '../button/Button';
 import apiConfig from '../../api/apiConfig';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 
 import './hero-slideItem.scss';
 import tmdbApi, { category } from '../../api/tmdbApi';
 
 const HeroSlideItem = (props) => {
-  let hisrory = useHistory();
+  let navigate = useNavigate();
   const item = props.item;
 
   const background = apiConfig.originalImage(
@@ -41,7 +41,7 @@ const HeroSlideItem = (props) => {
           <h2 className="title">{item.title}</h2>
           <div className="overview">{item.overview}</div>
           <div className="btns">
-            <Button onClick={() => hisrory.push('/movie/' + item.id)}>
+            <Button onClick={() => navigate.push('/movie/' + item.id)}>
               Watch now
             </Button>
             <OutlineButton onClick={setModalActive}>

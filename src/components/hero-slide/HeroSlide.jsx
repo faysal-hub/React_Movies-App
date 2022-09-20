@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import tmdbApi, { category, movieType } from '../../api/tmdbApi';
-import apiConfig from '../../api/apiConfig';
+import tmdbApi, { movieType } from '../../api/tmdbApi';
 
 import HeroSlideItem from '../hero-slideItem/HeroSlideItem';
 
