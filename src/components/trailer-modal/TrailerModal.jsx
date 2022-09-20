@@ -13,6 +13,7 @@ const TrailerModal = (props) => {
     <Modal active={false} id={`modal_${item.id}`}>
       <ModalContent onClose={onClose}>
         <iframe
+          allowFullScreen="allowfullscreen"
           ref={iframeRef}
           width="100%"
           height="500px"

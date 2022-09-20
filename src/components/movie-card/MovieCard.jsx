@@ -19,6 +19,9 @@ const MovieCard = (props) => {
   return (
     <Link to={link}>
       <div className="movie-card" style={{ backgroundImage: `url(${bg})` }}>
+        <div className="movie-card__rating">
+          {item.vote_average} <span>%</span>
+        </div>
         <Button>
           <i className="bx bx-play"></i>
         </Button>
