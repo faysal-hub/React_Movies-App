@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-
-import SwiperCore, { Autoplay, Pagination } from 'swiper';
+import SwiperCore, { Autoplay, Pagination, EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import tmdbApi, { movieType } from '../../api/tmdbApi';
-
 import HeroSlideItem from '../hero-slideItem/HeroSlideItem';
+import TrailerModal from '../trailer-modal/TrailerModal';
 
 import './hero-slide.scss';
-import TrailerModal from '../trailer-modal/TrailerModal';
 
 const HeroSlide = () => {
   SwiperCore.use([Autoplay, Pagination]);
@@ -34,7 +32,8 @@ const HeroSlide = () => {
   return (
     <div className="hero-slide">
       <Swiper
-        modules={[Autoplay, Pagination]}
+        effect={'coverflow'}
+        modules={[Autoplay, Pagination, EffectCoverflow]}
         pagination={{ clickable: true }}
         loop={true}
         grabCursor={true}

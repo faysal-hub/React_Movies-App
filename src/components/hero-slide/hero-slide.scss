@@ -3,3 +3,12 @@
 .hero-slide {
   margin-bottom: 3rem;
 }
+
+.swiper-pagination-bullet {
+  opacity: 1;
+  background: $white;
+}
+
+.swiper-pagination-bullet-active {
+  background: $main-color;
+}

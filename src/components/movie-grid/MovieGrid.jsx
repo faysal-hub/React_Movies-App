@@ -97,7 +97,7 @@ const MovieSearch = (props) => {
 
   const goToSearch = useCallback(() => {
     if (keyword.trim().length > 0) {
-      navigate.push(`/${category[props.category]}/search/${keyword}`);
+      navigate(`/${category[props.category]}/search/${keyword}`);
     }
   }, [keyword, props.category, navigate]);
 
