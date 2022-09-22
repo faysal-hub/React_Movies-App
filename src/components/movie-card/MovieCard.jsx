@@ -11,6 +11,11 @@ import './movie-card.scss';
 
 const MovieCard = (props) => {
   const item = props.item;
+  const movieRating = (item.vote_average * 10).toFixed(0);
+  const pathColor =
+    movieRating > 70 ? '#0eeb12' : movieRating > 50 ? '#ebeb0e' : '#ff0000';
+
+  const trailColor = movieRating > 0 ? 'gray' : '#eb0e7c';
 
   const link = '/' + category[props.category] + '/' + item.id;
 
@@ -21,14 +26,13 @@ const MovieCard = (props) => {
       <div className="movie-card" style={{ backgroundImage: `url(${bg})` }}>
         <div className="movie-card__rating">
           <CircularProgressbar
-            value={item.vote_average.toFixed(0)}
-            maxValue={10}
-            text={`${(item.vote_average * 10).toFixed(0)}%`}
+            value={movieRating}
+            text={`${movieRating}%`}
             styles={buildStyles({
               textColor: '#fff',
               textSize: '30px',
-              pathColor: 'turquoise',
-              trailColor: 'gold',
+              pathColor: pathColor,
+              trailColor: trailColor,
             })}
           />
         </div>

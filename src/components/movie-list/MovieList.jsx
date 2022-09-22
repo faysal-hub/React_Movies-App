@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import './movie-list.scss';
@@ -12,7 +12,7 @@ import MovieCard from '../movie-card/MovieCard';
 const MovieList = (props) => {
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const getList = async () => {
       let response = null;
       const params = {};

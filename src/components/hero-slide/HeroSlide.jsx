@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import SwiperCore, { Autoplay, Pagination, EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -13,7 +13,7 @@ const HeroSlide = () => {
 
   const [movieItems, setMovieItems] = useState([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const getMovies = async () => {
       const params = { page: 1 };
       try {
