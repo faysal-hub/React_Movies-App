@@ -1,6 +1,6 @@
 # Responsive React Movies App With TMDB API
 
-# Please refresh the page 3 times when you visit my applictation for the very 1st time for loading all the images. (I used free version of TMDB Api, which only provide 40 images for each http request.)
+# Please refresh the page 2-3 times when you visit my applictation for the very 1st time for loading all the images. (I used free version of TMDB Api, which only provide 40 images for each http request.)
 
 # Live Link: [https://tmoviesdb.netlify.app/](https://tmoviesdb.netlify.app/)
 
@@ -44,7 +44,7 @@
 
 ![More pictures](public/screenshots/02.png)
 
-![More pictures](public/screenshots/04.png)
+![More pictures](public/screenshots/03.png)
 
 ## 🙌🏼 Contribute
 
